@@ -17,7 +17,7 @@ namespace QuanLyKho.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        class RelayCommand<T> : ICommand
+        protected class RelayCommand<T> : ICommand
         {
             private readonly Predicate<T> _canExecute;
             private readonly Action<T> _execute;

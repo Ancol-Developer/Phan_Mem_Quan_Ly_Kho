@@ -16,13 +16,14 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        
         DataContext="{StaticResource MainVM}"
         
         ResizeMode="NoResize"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         
-        Title="MainWindow" Height="450" Width="800">
+        Name="mainWindow"
+        Title="Phần mềm quản lý kho" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -30,7 +31,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <uc:ControlBarUC></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
         </Grid>
     </Grid>
 </Window>

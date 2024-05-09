@@ -57,6 +57,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <Button Grid.Column="0" ToolTip="Nhập kho">
@@ -89,7 +91,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="2" ToolTip="Vật tư">
+                    <Button Command="{Binding ObjectCommand}" Grid.Column="2" ToolTip="Vật tư">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -104,7 +106,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="3" ToolTip="Đơn vị đo">
+                    <Button Grid.Column="3" Command="{Binding UnitCommand}" ToolTip="Đơn vị đo">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -119,7 +121,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="4" ToolTip="Nhà cung cấp">
+                    <Button Command="{Binding SuplierCommand}" Grid.Column="4" ToolTip="Nhà cung cấp">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -134,7 +136,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="5" ToolTip="Khách hàng">
+                    <Button Command="{Binding CustomerCommand}" Grid.Column="5" ToolTip="Khách hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -146,6 +148,21 @@
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24" Kind="HumanHandsup" />
+                            </Grid>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Column="6" ToolTip="Người dùng">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="Người dùng" HorizontalAlignment="Center"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24" Kind="AccountMultipleOutline" />
                             </Grid>
                         </Grid>
                     </Button>

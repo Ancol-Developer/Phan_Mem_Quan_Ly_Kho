@@ -16,6 +16,7 @@ namespace QuanLyKho.ViewModel
         public ICommand SuplierCommand { get; set; }
         public ICommand CustomerCommand { get; set; }
         public ICommand ObjectCommand { get; set; }
+        public ICommand UserCommand { get; set; }
         public MainViewModel()
         {
             LoadedWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
@@ -46,6 +47,12 @@ namespace QuanLyKho.ViewModel
             ObjectCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
                 ObjectWindow wd = new ObjectWindow();
+                wd.ShowDialog();
+            });
+
+            UserCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
+            {
+                UserWindow wd = new UserWindow();
                 wd.ShowDialog();
             });
         }

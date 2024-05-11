@@ -151,7 +151,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="6" ToolTip="Người dùng">
+                    <Button Command="{Binding UserCommand}" Grid.Column="6" ToolTip="Người dùng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>

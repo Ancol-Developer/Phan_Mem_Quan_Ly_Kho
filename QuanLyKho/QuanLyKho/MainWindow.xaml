@@ -61,7 +61,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" ToolTip="Nhập kho">
+                    <Button Command="{Binding InputCommand}" Grid.Column="0" ToolTip="Nhập kho">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -76,7 +76,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" ToolTip="Xuất kho">
+                    <Button Command="{Binding OutputCommand}" Grid.Column="1" ToolTip="Xuất kho">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>

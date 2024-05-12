@@ -94,6 +94,9 @@
     <Compile Include="ObjectWindow.xaml.cs">
       <DependentUpon>ObjectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OutputWindow.xaml.cs">
+      <DependentUpon>OutputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuplierWindow.xaml.cs">
       <DependentUpon>SuplierWindow.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ObjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OutputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

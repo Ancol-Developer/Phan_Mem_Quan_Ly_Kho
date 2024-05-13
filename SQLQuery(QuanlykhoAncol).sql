@@ -45,7 +45,7 @@ create table Objects
 	BarCode nvarchar(max)
 
 	foreign key(IdUnit) references Unit(Id),
-	foreign key(IdSuplier) references Customer(Id),
+	foreign key(IdSuplier) references Suplier(Id),
 )
 go
 
@@ -111,14 +111,14 @@ create table OutPutInfo
 (
 	Id nvarchar(128) primary key,
 	IdObject nvarchar(128) not null,
-	IdInputInfo nvarchar(128) not null,
+	IdOutInfo nvarchar(128) not null,
 	IdCustomer int not null,
 
 	Count int,
 	Status nvarchar(max),
 
 	foreign key (IdObject) references Objects(Id),
-	foreign key (IdInputInfo) references InputInfo(Id),
+	foreign key (IdOutInfo) references OutPut(Id),
 	foreign key (IdCustomer) references Customer(Id),
 )
 go

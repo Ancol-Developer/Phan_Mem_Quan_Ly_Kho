@@ -400,12 +400,12 @@
                         </Grid>
 
                         <Grid Grid.Row="2">
-                            <ListView>
+                            <ListView ItemsSource="{Binding TonKhoList}">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="STT"/>
-                                        <GridViewColumn Header="Tên vật tư"/>
-                                        <GridViewColumn Header="Số lượng tồn"/>
+                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"/>
+                                        <GridViewColumn Header="Tên vật tư" DisplayMemberBinding="{Binding Object.DisplayName}"/>
+                                        <GridViewColumn Header="Số lượng tồn" DisplayMemberBinding="{Binding Count}"/>
                                     </GridView>
                                 </ListView.View>
                             </ListView>

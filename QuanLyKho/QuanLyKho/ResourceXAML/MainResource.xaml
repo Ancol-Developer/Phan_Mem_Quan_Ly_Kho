@@ -4,13 +4,6 @@
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
     <viewmodel:UnitViewModel x:Key="UnitVM"></viewmodel:UnitViewModel>
-    
-    <Style TargetType="Button" x:Key="button">
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="FontSize" Value="15"/>
-        <Setter Property="FontFamily" Value="Arial"/>
-        <Setter Property="Background" Value="Coral"/>
-    </Style>
-    
+    <viewmodel:SuplierViewModel x:Key="SuplierVM"></viewmodel:SuplierViewModel>
+  
 </ResourceDictionary>

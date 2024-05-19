@@ -12,23 +12,24 @@ namespace QuanLyKho.ViewModel
     public class UnitViewModel : BaseViewModel
     {
         private ObservableCollection<Unit> _List;
-        public ObservableCollection<Unit> List { get => _List; 
-            set 
-            { 
-                _List = value; 
-                OnPropertyChanged(); 
-                if(SelectedItem != null)
-                {
-                    DisplayName = SelectedItem.DisplayName;
-                }
-            } }
+        public ObservableCollection<Unit> List { get => _List; set { _List = value; OnPropertyChanged();} }
 
         private string _DisplayName;
         public string DisplayName { get => _DisplayName; set { _DisplayName = value; OnPropertyChanged(); } }
 
         private Unit _SelectedItem;
-        public Unit SelectedItem { get => _SelectedItem; set { _SelectedItem = value; OnPropertyChanged(); } }
+        public Unit SelectedItem { get => _SelectedItem; 
+            set 
+            { 
+                _SelectedItem = value; 
+                OnPropertyChanged();
 
+                if (SelectedItem != null)
+                {
+                    DisplayName = SelectedItem.DisplayName;
+                }
+            } 
+        }
         public ICommand AddCommand { get; set; }
         public ICommand EditCommand { get; set; }
         public UnitViewModel()
@@ -70,7 +71,7 @@ namespace QuanLyKho.ViewModel
 
                 var check = DataProvider.Ins.DB.Units.Where(x => x.DisplayName == DisplayName);
                 if (check == null
-                || check.Count() == 0)
+                || check.Count() != 0)
                     return false;
 
                 return true;

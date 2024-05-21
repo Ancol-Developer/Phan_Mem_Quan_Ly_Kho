@@ -22,6 +22,7 @@
          WindowStartupLocation="CenterScreen"
         Name="customerWindow"
         
+        DataContext="{StaticResource CustomerVM}"
         Title="Khách hàng" Height="500" Width="750">
     <Grid>
         <Grid.RowDefinitions>
@@ -46,8 +47,8 @@
                     <TextBox Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Text="{Binding MoreInfor, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Thông tin thêm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <DatePicker VerticalAlignment="Center" SelectedDate="{Binding ContractDate, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Ngày hợp tác" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    <TextBox Text="{Binding MoreInfo, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Thông tin thêm" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <DatePicker VerticalAlignment="Center" SelectedDate="{Binding ContractDate, StringFormat='dd/MM/yyyy', UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Ngày hợp tác" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -65,11 +66,12 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                                <GridViewColumn Header="Tên khách hàng" DisplayMemberBinding="{Binding Address}"/>
+                                <GridViewColumn Header="Tên khách hàng" DisplayMemberBinding="{Binding DisplayName}"/>
+                                <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding Address}"/>
                                 <GridViewColumn Header="Điện thoại" DisplayMemberBinding="{Binding Phone}"/>
                                 <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
-                                <GridViewColumn Header="Thông tin thêm" DisplayMemberBinding="{Binding MoreInfor}"/>
-                                <GridViewColumn Header="Ngày hợp tác" DisplayMemberBinding="{Binding ContractDate}"/>
+                                <GridViewColumn Header="Thông tin thêm" DisplayMemberBinding="{Binding MoreInfo}"/>
+                                <GridViewColumn Header="Ngày hợp tác" DisplayMemberBinding="{Binding ContractDate, StringFormat='dd/MM/yyyy'}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
